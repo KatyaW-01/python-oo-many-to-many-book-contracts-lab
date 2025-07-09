@@ -13,7 +13,11 @@ class Author:
 
 
     def books(self):
-        pass
+        related_books = []
+        for contract in Contract.all:
+            if contract.author == self:
+                related_books.append(contract.book)
+        return list(set(related_books))
 
     def sign_contracts(self,book,date,royalties):
         pass
