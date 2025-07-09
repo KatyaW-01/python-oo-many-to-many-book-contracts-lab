@@ -59,6 +59,7 @@ class Contract:
         self.date = date 
         self.royalties = royalties 
         Contract.all.append(self)
+        Contract.contracts_by_date(date)
 
     @property
     def author(self):
@@ -97,6 +98,11 @@ class Contract:
         self._royalties = value
 
     @classmethod
-    def contracts_by_date(cls):
-        pass
+    def contracts_by_date(cls,date):
+        contracts = []
+        for contract in cls.all:
+            if contract.date == date:
+                contracts.append(contract)
+        return contracts
+
     
