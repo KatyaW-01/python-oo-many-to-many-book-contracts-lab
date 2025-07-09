@@ -2,9 +2,15 @@ class Author:
     all = []
     def __init__(self,name):
         self.name = name
+        Author.all.append(self)
 
     def contracts(self):
-        pass
+        related_contracts = []
+        for contract in Contract.all:
+            if contract.author == self:
+                related_contracts.append(contract)
+        return related_contracts
+
 
     def books(self):
         pass
@@ -19,9 +25,14 @@ class Book:
     all = []
     def __init__(self,title):
         self.title = title
+        Book.all.append(self)
 
     def contracts(self):
-        pass
+        related_contracts = []
+        for contract in Contract.all:
+            if contract.book == self:
+                related_contracts.append(contract)
+        return related_contracts
 
     def authors(self):
         pass
@@ -34,6 +45,7 @@ class Contract:
         self.book = book 
         self.date = date 
         self.royalties = royalties 
+        Contract.all.append(self)
 
     @property
     def author(self):
