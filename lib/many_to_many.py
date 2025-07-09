@@ -1,9 +1,10 @@
 class Author:
     pass
-
-
+       
 class Book:
-    pass
+    all = []
+    def __init__(self,title):
+        self.title = title
 
 
 class Contract:
