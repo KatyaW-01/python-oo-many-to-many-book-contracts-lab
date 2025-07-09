@@ -23,7 +23,11 @@ class Author:
         pass
 
     def total_royalties(self):
-        pass
+        total_royalties = 0
+        for contract in Contract.all:
+            if contract.author == self:
+                total_royalties += contract.royalties
+        return total_royalties
        
 class Book:
     all = []
