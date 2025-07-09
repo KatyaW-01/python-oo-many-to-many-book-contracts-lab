@@ -10,4 +10,9 @@ class Book:
 
 
 class Contract:
-    pass
+    all = []
+    def __init__(self,author,book,date,royalties):
+        self.author = author #instance of Author class
+        self.book = book #instance of Book class
+        self.date = date #string
+        self.royalties = royalties #integer
