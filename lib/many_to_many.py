@@ -2,11 +2,29 @@ class Author:
     all = []
     def __init__(self,name):
         self.name = name
+
+    def contracts(self):
+        pass
+
+    def books(self):
+        pass
+
+    def sign_contracts(self,book,date,royalties):
+        pass
+
+    def total_royalties(self):
+        pass
        
 class Book:
     all = []
     def __init__(self,title):
         self.title = title
+
+    def contracts(self):
+        pass
+
+    def authors(self):
+        pass
 
 
 class Contract:
@@ -14,8 +32,8 @@ class Contract:
     def __init__(self,author,book,date,royalties):
         self.author = author 
         self.book = book 
-        self.date = date #string
-        self.royalties = royalties #integer
+        self.date = date 
+        self.royalties = royalties 
 
     @property
     def author(self):
@@ -52,4 +70,8 @@ class Contract:
         if not isinstance(value,int):
             raise Exception
         self._royalties = value
+
+    @classmethod
+    def contracts_by_date(cls):
+        pass
     
