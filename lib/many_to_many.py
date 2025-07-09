@@ -35,7 +35,12 @@ class Book:
         return related_contracts
 
     def authors(self):
-        pass
+        related_authors = []
+        for contract in Contract.all:
+            if contract.book == self:
+                related_authors.append(contract.author)
+        return list(set(related_authors))
+        #removes duplicates but still keeps it a list
 
 
 class Contract:
