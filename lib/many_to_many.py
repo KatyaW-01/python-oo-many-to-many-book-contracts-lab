@@ -12,8 +12,8 @@ class Book:
 class Contract:
     all = []
     def __init__(self,author,book,date,royalties):
-        self.author = author #instance of Author class
-        self.book = book #instance of Book class
+        self.author = author 
+        self.book = book 
         self.date = date #string
         self.royalties = royalties #integer
 
@@ -34,3 +34,22 @@ class Contract:
         if not isinstance(value,Book):
             raise Exception
         self._book = value
+
+    @property
+    def date(self):
+        return self._date
+    @date.setter
+    def date(self,value):
+        if not isinstance(value,str):
+            raise Exception
+        self._date = value
+
+    @property
+    def royalties(self):
+        return self._royalties
+    @royalties.setter
+    def royalties(self,value):
+        if not isinstance(value,int):
+            raise Exception
+        self._royalties = value
+    
