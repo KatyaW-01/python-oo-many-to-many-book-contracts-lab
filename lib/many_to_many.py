@@ -19,8 +19,9 @@ class Author:
                 related_books.append(contract.book)
         return list(set(related_books))
 
-    def sign_contracts(self,book,date,royalties):
-        pass
+    def sign_contract(self,book,date,royalties):
+        new_contract = Contract(self,book,date,royalties)
+        return new_contract
 
     def total_royalties(self):
         total_royalties = 0
